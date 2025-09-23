@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ishrealm - Home</title>
+  <link rel="stylesheet" href="./css/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/qrcode-generator@1.4.4/qrcode.min.js"></script>
+</head>
+<body>
+  <nav class="nav-header">
+    <div class="nav-links">
+      <a href="home.html" class="nav-link">Home</a>
+      <a href="twitch.html" class="nav-link">Twitch</a>
+      <a href="youtube.html" class="nav-link">YouTube</a>
+      <a href="tiktok.html" class="nav-link">TikTok</a>
+      <a href="guide.html" class="nav-link">Guide</a>
+    </div>
+  </nav>
+
+  <div class="bg-animation"></div>
+
+  <main class="sponsorship-container">
+    <div class="glass-card">
+      <div class="card-content">
+        <div class="text-section">
+          <h1 class="sponsorship-title">Turn Gaming Hours Into Real Money</h1>
+          
+          <div class="sponsorship-text">
+            <p class="highlight">I started using GrabTap as a side hustle, and it's crazy how much you can earn just by playing games you already enjoy.</p>
+            
+            <p>The concept is simple: Play games through the GrabTap platform, complete achievements, and earn real money rewards. The more you play, the more it adds up — some dedicated players are crossing <strong>$1000+</strong> in rewards.</p>
+            
+            <p class="testimonial">"What I love about GrabTap is that it turns your everyday gaming sessions into actual earnings. Whether you're grinding your favorite games or trying something new, you're always stacking up rewards."</p>
+
+            <a href="https://grabtap.com/c/ishrealm?utm_source=app_share&utm_medium=share&utm_campaign=community_page&utm_content=ishrealm" 
+               class="cta-button" target="_blank">
+              Start Playing
+              <span class="button-arrow">→</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="qr-section">
+          <div class="qr-card">
+            <div id="qrCode"></div>
+            <p class="qr-caption">Scan to join on mobile</p>
+          </div>
+          <p class="mobile-caption">Available on iOS & Android</p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script src="js/main.js"></script>
+  <script>
+    // Generate QR Code
+    window.addEventListener('DOMContentLoaded', () => {
+      const qr = qrcode(0, 'L');
+      qr.addData('https://grabtap.com/c/ishrealm');
+      qr.make();
+      
+      document.getElementById('qrCode').innerHTML = qr.createImgTag(5, 10);
+      
+      // Add neon glow class after QR code is generated
+      setTimeout(() => {
+        document.querySelector('#qrCode img').classList.add('qr-code');
+      }, 100);
+    });
+  </script>
+</body>
+</html>
