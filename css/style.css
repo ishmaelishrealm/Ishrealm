@@ -446,7 +446,6 @@ body {
 
 /* Twitch Theme */
 .twitch-theme {
-  background: url('../assets/twitch.png') center/cover no-repeat fixed;
   position: relative;
   overflow: hidden;
 }
@@ -458,7 +457,9 @@ body {
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(14, 14, 16, 0.75);
+  background: url('../assets/twitch.png') center/cover no-repeat fixed;
+  opacity: 0.85;
+  z-index: -1;
   pointer-events: none;
 }
 
@@ -514,7 +515,6 @@ body {
 
 /* YouTube Theme */
 .youtube-theme {
-  background: url('../assets/youtube.png') center/cover no-repeat fixed;
   position: relative;
   overflow: hidden;
 }
@@ -526,7 +526,9 @@ body {
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(17, 17, 17, 0.75);
+  background: url('../assets/youtube.png') center/cover no-repeat fixed;
+  opacity: 0.85;
+  z-index: -1;
   pointer-events: none;
 }
 
@@ -568,7 +570,6 @@ body {
 
 /* TikTok Theme */
 .tiktok-theme {
-  background: url('../assets/tiktok.png') center/cover no-repeat fixed;
   position: relative;
   overflow: hidden;
 }
@@ -580,7 +581,9 @@ body {
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0, 0, 0, 0.75);
+  background: url('../assets/tiktok.png') center/cover no-repeat fixed;
+  opacity: 0.85;
+  z-index: -1;
   pointer-events: none;
 }
 
