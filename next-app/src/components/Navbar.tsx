@@ -4,97 +4,96 @@ import { useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
-export default function Navbar() {
-  const [isOpen, setIsOpen] = useState(false);
+const Navbar = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const pathname = usePathname();
 
   const navItems = [
-    { name: 'Home', href: '/', icon: '🏠' },
-    { name: 'Streaming', href: '/streaming', icon: '❄️' },
-    { name: 'Roblox Dev', href: '/roblox', icon: '🎮' },
-    { name: 'Fortnite Creative', href: '/fortnite', icon: '⚡' },
-    { name: 'About Me', href: '/about', icon: '👤' },
+    { href: '/', label: 'Home', description: 'Main Hub' },
+    { href: '/streaming', label: 'Streaming', description: 'Mugiwara Frost' },
+    { href: '/roblox', label: 'Roblox Dev', description: 'Mini Games' },
+    { href: '/fortnite', label: 'Fortnite', description: 'Creative Maps' },
+    { href: '/about', label: 'About', description: 'About Ishmael' },
   ];
 
   return (
-    <nav className="fixed top-0 w-full z-50 bg-black/90 backdrop-blur-md border-b border-gray-700/50">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-black border-b border-pink-500/20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
+        <div className="flex justify-between items-center h-16">
           {/* Logo */}
-          <Link href="/" className="flex items-center space-x-2 group">
-            <div className="text-2xl font-bold bg-gradient-to-r from-gray-200 to-white bg-clip-text text-transparent group-hover:from-white group-hover:to-gray-300 transition-all duration-300">
-              Ishrealm
+          <Link href="/" className="flex items-center space-x-2">
+            <div className="w-8 h-8 bg-gradient-to-r from-pink-500 to-green-500 rounded-lg flex items-center justify-center">
+              <span className="text-white font-bold text-sm italic" style={{fontFamily: 'cursive'}}>sonoaac</span>
             </div>
-            <div className="text-xs text-gray-400 group-hover:text-gray-300 transition-colors">
-              / Mugiwara Frost
-            </div>
+            <span className="text-white font-bold text-xl">Ishrealm</span>
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:block">
-            <div className="ml-10 flex items-baseline space-x-4">
-              {navItems.map((item) => (
-                <Link
-                  key={item.name}
-                  href={item.href}
-                  className={`px-3 py-2 rounded-md text-sm font-medium transition-all duration-300 relative group ${
-                    pathname === item.href
-                      ? 'text-white bg-gray-800/50'
-                      : 'text-gray-300 hover:text-white hover:bg-gray-800/30'
-                  }`}
-                >
-                  <span className="flex items-center space-x-2">
-                    <span className="text-lg">{item.icon}</span>
-                    <span>{item.name}</span>
-                  </span>
-                  {/* Subtle hover glow effect */}
-                  <div className="absolute inset-0 rounded-md bg-gradient-to-r from-gray-600/10 to-gray-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-sm -z-10"></div>
-                </Link>
-              ))}
-            </div>
+          <div className="hidden md:flex items-center space-x-8">
+            {navItems.map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                className={`relative group px-3 py-2 rounded-md text-sm font-medium transition-all duration-300 ${
+                  pathname === item.href
+                    ? 'text-pink-400'
+                    : 'text-gray-300 hover:text-white'
+                }`}
+              >
+                <span className="relative z-10">{item.label}</span>
+                <div className="absolute inset-0 bg-gradient-to-r from-pink-500/20 to-green-500/20 rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <div className="absolute -bottom-8 left-1/2 transform -translate-x-1/2 bg-gray-900 text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap">
+                  {item.description}
+                </div>
+              </Link>
+            ))}
           </div>
 
           {/* Mobile menu button */}
           <div className="md:hidden">
             <button
-              onClick={() => setIsOpen(!isOpen)}
-              className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-800/30 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-gray-500 transition-all duration-300"
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              className="text-gray-300 hover:text-white focus:outline-none focus:text-white"
             >
-              <span className="sr-only">Open main menu</span>
-              <div className="w-6 h-6 flex flex-col justify-center space-y-1">
-                <span className={`block h-0.5 w-6 bg-current transition-all duration-300 ${isOpen ? 'rotate-45 translate-y-1.5' : ''}`}></span>
-                <span className={`block h-0.5 w-6 bg-current transition-all duration-300 ${isOpen ? 'opacity-0' : ''}`}></span>
-                <span className={`block h-0.5 w-6 bg-current transition-all duration-300 ${isOpen ? '-rotate-45 -translate-y-1.5' : ''}`}></span>
-              </div>
+              <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                {isMenuOpen ? (
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                ) : (
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                )}
+              </svg>
             </button>
           </div>
         </div>
-      </div>
 
-      {/* Mobile Navigation Dropdown */}
-      {isOpen && (
-        <div className="md:hidden">
-          <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-black/95 backdrop-blur-md border-t border-gray-700/50">
-            {navItems.map((item) => (
-              <Link
-                key={item.name}
-                href={item.href}
-                onClick={() => setIsOpen(false)}
-                className={`block px-3 py-2 rounded-md text-base font-medium transition-all duration-300 ${
-                  pathname === item.href
-                    ? 'text-white bg-gray-800/50'
-                    : 'text-gray-300 hover:text-white hover:bg-gray-800/30'
-                }`}
-              >
-                <span className="flex items-center space-x-3">
-                  <span className="text-xl">{item.icon}</span>
-                  <span>{item.name}</span>
-                </span>
-              </Link>
-            ))}
+        {/* Mobile Navigation */}
+        {isMenuOpen && (
+          <div className="md:hidden">
+            <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-black/95 backdrop-blur-md rounded-lg mt-2">
+              {navItems.map((item) => (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  className={`block px-3 py-2 rounded-md text-base font-medium transition-colors duration-300 ${
+                    pathname === item.href
+                      ? 'text-pink-400 bg-pink-500/10'
+                      : 'text-gray-300 hover:text-white hover:bg-gray-800/50'
+                  }`}
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  <div className="flex flex-col">
+                    <span>{item.label}</span>
+                    <span className="text-xs text-gray-400">{item.description}</span>
+                  </div>
+                </Link>
+              ))}
+            </div>
           </div>
-        </div>
-      )}
+        )}
+      </div>
     </nav>
   );
-}
+};
+
+export default Navbar;

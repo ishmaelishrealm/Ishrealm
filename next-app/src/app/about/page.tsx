@@ -1,195 +1,199 @@
-import Layout from '@/components/Layout';
+'use client';
+
 import SocialLinks from '@/components/SocialLinks';
 
-export default function About() {
+export default function AboutPage() {
   return (
-    <Layout className="bg-gradient-to-br from-gray-900/20 via-slate-900/10 to-zinc-900/20">
+    <div className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-black">
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-        {/* Background Effects */}
-        <div className="absolute inset-0 bg-gradient-to-br from-gray-900/40 via-slate-800/20 to-zinc-900/30"></div>
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(100,100,100,0.1),transparent_50%)]"></div>
-        
-        {/* Subtle particles */}
-        <div className="absolute inset-0">
-          {[...Array(20)].map((_, i) => (
-            <div
-              key={i}
-              className="absolute w-1 h-1 bg-gray-400 rounded-full opacity-40 animate-pulse"
-              style={{
-                left: `${Math.random() * 100}%`,
-                top: `${Math.random() * 100}%`,
-                animationDelay: `${Math.random() * 3}s`,
-                animationDuration: `${2 + Math.random() * 3}s`,
-              }}
-            ></div>
-          ))}
-        </div>
-
-        <div className="relative z-10 text-center max-w-4xl mx-auto px-4">
-          {/* Profile Picture Placeholder */}
-          <div className="w-32 h-32 bg-gradient-to-br from-purple-500 to-pink-500 rounded-full mx-auto mb-8 flex items-center justify-center text-4xl">
-            👤
-          </div>
-          
-          {/* Main Title */}
-          <h1 className="text-5xl md:text-7xl font-bold mb-6">
-            <span className="bg-gradient-to-r from-gray-300 via-white to-gray-300 bg-clip-text text-transparent">
-              Ishmael
-            </span>
-          </h1>
-          
-          {/* Subtitle */}
-          <div className="text-2xl md:text-3xl text-gray-300 mb-4">
-            Creator of <span className="text-purple-300">Ishrealm</span>
-          </div>
-          
-          {/* Description */}
-          <p className="text-lg md:text-xl text-gray-400 mb-8 max-w-2xl mx-auto leading-relaxed">
-            Hi! I'm Ishmael, a passionate content creator and game developer. 
-            I love building immersive experiences, connecting with communities, 
-            and pushing the boundaries of creativity in gaming.
-          </p>
-
-          {/* Social Links */}
-          <div className="flex justify-center mb-12">
-            <SocialLinks />
-          </div>
-        </div>
-      </section>
-
-      {/* About Me Section */}
-      <section className="py-20 px-4">
-        <div className="max-w-6xl mx-auto">
-          <h2 className="text-4xl font-bold text-center mb-16 bg-gradient-to-r from-gray-300 to-white bg-clip-text text-transparent">
-            About Me
-          </h2>
-          
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            {/* Text Content */}
-            <div className="space-y-6">
-              <div className="bg-gradient-to-br from-gray-900/30 to-slate-900/30 rounded-xl p-8 border border-gray-500/30">
-                <h3 className="text-2xl font-bold text-gray-200 mb-4">My Journey</h3>
-                <p className="text-gray-300 leading-relaxed">
-                  I started my creative journey as a passionate gamer who wanted to share 
-                  experiences with others. What began as simple streaming evolved into 
-                  a full-fledged content creation empire spanning multiple platforms.
-                </p>
-              </div>
-              
-              <div className="bg-gradient-to-br from-gray-900/30 to-slate-900/30 rounded-xl p-8 border border-gray-500/30">
-                <h3 className="text-2xl font-bold text-gray-200 mb-4">My Mission</h3>
-                <p className="text-gray-300 leading-relaxed">
-                  I believe in creating content that brings people together. Whether it's 
-                  through epic gaming streams, innovative Roblox games, or future Fortnite 
-                  creations, my goal is to build communities and unforgettable experiences.
-                </p>
-              </div>
+      <section className="relative py-20 pt-36">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            {/* Profile Picture Placeholder */}
+            <div className="w-32 h-32 mx-auto mb-8 bg-gradient-to-r from-pink-500 to-green-500 rounded-full flex items-center justify-center shadow-2xl">
+              <span className="text-white font-bold text-4xl">I</span>
             </div>
-
-            {/* Stats */}
-            <div className="space-y-6">
-              <div className="bg-gradient-to-br from-gray-900/30 to-slate-900/30 rounded-xl p-8 border border-gray-500/30 text-center">
-                <div className="text-4xl font-bold text-gray-200 mb-2">3+</div>
-                <div className="text-gray-300">Years Creating</div>
-              </div>
-              
-              <div className="bg-gradient-to-br from-gray-900/30 to-slate-900/30 rounded-xl p-8 border border-gray-500/30 text-center">
-                <div className="text-4xl font-bold text-gray-200 mb-2">12+</div>
-                <div className="text-gray-300">Games Developed</div>
-              </div>
-              
-              <div className="bg-gradient-to-br from-gray-900/30 to-slate-900/30 rounded-xl p-8 border border-gray-500/30 text-center">
-                <div className="text-4xl font-bold text-gray-200 mb-2">50K+</div>
-                <div className="text-gray-300">Total Views</div>
-              </div>
+            
+            <h1 className="text-5xl md:text-7xl font-bold mb-4">
+              <span className="bg-gradient-to-r from-pink-500 to-green-500 bg-clip-text text-transparent">
+                Ishmael
+              </span>
+            </h1>
+            <p className="text-xl md:text-2xl text-gray-300 mb-2">
+              Creator, Streamer, Game Developer
+            </p>
+            <div className="inline-block bg-gradient-to-r from-pink-500/20 to-green-500/20 backdrop-blur-sm border border-pink-400/30 rounded-lg px-6 py-3">
+              <p className="text-pink-300 font-medium">
+                Also known as <span className="font-bold text-white">Mugiwara Frost</span>
+              </p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Skills Section */}
-      <section className="py-20 px-4 bg-gradient-to-r from-gray-900/10 to-slate-900/10">
-        <div className="max-w-6xl mx-auto">
-          <h2 className="text-4xl font-bold text-center mb-16 bg-gradient-to-r from-gray-300 to-white bg-clip-text text-transparent">
-            Skills & Expertise
-          </h2>
-          
-          <div className="grid md:grid-cols-3 gap-8">
-            {/* Content Creation */}
-            <div className="bg-gradient-to-br from-gray-900/30 to-slate-900/30 rounded-xl p-8 border border-gray-500/30 text-center">
-              <div className="text-4xl mb-4">🎥</div>
-              <h3 className="text-2xl font-bold text-gray-200 mb-4">Content Creation</h3>
-              <ul className="space-y-2 text-gray-300 text-left">
-                <li>• Live streaming on Twitch</li>
-                <li>• Video editing & production</li>
-                <li>• Social media management</li>
-                <li>• Community building</li>
-              </ul>
+      {/* About Section */}
+      <section className="py-16 bg-black/50 backdrop-blur-sm">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl font-bold text-white mb-4">
+              About Me
+            </h2>
+            <p className="text-xl text-gray-300">
+              Passionate about gaming, content creation, and building amazing experiences
+            </p>
+          </div>
+
+          <div className="prose prose-lg prose-invert max-w-none">
+            <div className="bg-gradient-to-br from-pink-500/10 to-green-500/10 backdrop-blur-sm border border-pink-500/20 rounded-lg p-8 mb-8">
+              <h3 className="text-2xl font-bold text-white mb-4">My Story</h3>
+              <p className="text-gray-300 leading-relaxed mb-4">
+                Hey there! I&apos;m Ishmael, but you might know me as <strong className="text-pink-400">Mugiwara Frost</strong> in the streaming world. 
+                I&apos;m a passionate gamer, content creator, and game developer who loves bringing people together through amazing experiences.
+              </p>
+              <p className="text-gray-300 leading-relaxed mb-4">
+                My journey started with a love for gaming and has evolved into creating content, developing games, and building a community 
+                of amazing people who share the same passion for interactive entertainment.
+              </p>
+              <p className="text-gray-300 leading-relaxed">
+                Whether I&apos;m streaming live gameplay, developing mini-games in Roblox, or working on Fortnite Creative maps, 
+                my goal is always to create something that brings joy and excitement to others.
+              </p>
             </div>
 
-            {/* Game Development */}
-            <div className="bg-gradient-to-br from-gray-900/30 to-slate-900/30 rounded-xl p-8 border border-gray-500/30 text-center">
-              <div className="text-4xl mb-4">🎮</div>
-              <h3 className="text-2xl font-bold text-gray-200 mb-4">Game Development</h3>
-              <ul className="space-y-2 text-gray-300 text-left">
-                <li>• Roblox Studio & Lua scripting</li>
-                <li>• Game design & mechanics</li>
-                <li>• 3D modeling & animation</li>
-                <li>• Fortnite Creative tools</li>
-              </ul>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div className="bg-gradient-to-br from-pink-500/10 to-green-500/10 backdrop-blur-sm border border-pink-500/20 rounded-lg p-6">
+                <h3 className="text-xl font-bold text-white mb-4">What I Do</h3>
+                <ul className="text-gray-300 space-y-2">
+                  <li className="flex items-center">
+                    <span className="w-2 h-2 bg-pink-500 rounded-full mr-3"></span>
+                    Live streaming on Twitch as Mugiwara Frost
+                  </li>
+                  <li className="flex items-center">
+                    <span className="w-2 h-2 bg-green-500 rounded-full mr-3"></span>
+                    Creating YouTube content and highlights
+                  </li>
+                  <li className="flex items-center">
+                    <span className="w-2 h-2 bg-pink-500 rounded-full mr-3"></span>
+                    Developing mini-games in Roblox
+                  </li>
+                  <li className="flex items-center">
+                    <span className="w-2 h-2 bg-green-500 rounded-full mr-3"></span>
+                    Building Fortnite Creative maps
+                  </li>
+                  <li className="flex items-center">
+                    <span className="w-2 h-2 bg-pink-500 rounded-full mr-3"></span>
+                    Growing an amazing community
+                  </li>
+                </ul>
+              </div>
+
+              <div className="bg-gradient-to-br from-green-500/10 to-pink-500/10 backdrop-blur-sm border border-green-500/20 rounded-lg p-6">
+                <h3 className="text-xl font-bold text-white mb-4">My Goals</h3>
+                <ul className="text-gray-300 space-y-2">
+                  <li className="flex items-center">
+                    <span className="w-2 h-2 bg-green-500 rounded-full mr-3"></span>
+                    Create engaging gaming content
+                  </li>
+                  <li className="flex items-center">
+                    <span className="w-2 h-2 bg-pink-500 rounded-full mr-3"></span>
+                    Build innovative game experiences
+                  </li>
+                  <li className="flex items-center">
+                    <span className="w-2 h-2 bg-green-500 rounded-full mr-3"></span>
+                    Foster a positive gaming community
+                  </li>
+                  <li className="flex items-center">
+                    <span className="w-2 h-2 bg-pink-500 rounded-full mr-3"></span>
+                    Inspire other creators and developers
+                  </li>
+                  <li className="flex items-center">
+                    <span className="w-2 h-2 bg-green-500 rounded-full mr-3"></span>
+                    Keep pushing creative boundaries
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Skills & Interests */}
+      <section className="py-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl font-bold text-white mb-4">
+              Skills & Interests
+            </h2>
+            <p className="text-xl text-gray-300">
+              What I&apos;m passionate about and working on
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="text-center">
+              <div className="w-16 h-16 mx-auto mb-4 bg-gradient-to-r from-pink-500 to-green-500 rounded-lg flex items-center justify-center">
+                <svg className="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                </svg>
+              </div>
+              <h3 className="text-xl font-semibold text-white mb-2">Content Creation</h3>
+              <p className="text-gray-400">Streaming, video editing, social media management</p>
             </div>
 
-            {/* Technical Skills */}
-            <div className="bg-gradient-to-br from-gray-900/30 to-slate-900/30 rounded-xl p-8 border border-gray-500/30 text-center">
-              <div className="text-4xl mb-4">💻</div>
-              <h3 className="text-2xl font-bold text-gray-200 mb-4">Technical Skills</h3>
-              <ul className="space-y-2 text-gray-300 text-left">
-                <li>• TypeScript & React</li>
-                <li>• Web development</li>
-                <li>• UI/UX design</li>
-                <li>• Project management</li>
-              </ul>
+            <div className="text-center">
+              <div className="w-16 h-16 mx-auto mb-4 bg-gradient-to-r from-pink-500 to-green-500 rounded-lg flex items-center justify-center">
+                <svg className="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+                </svg>
+              </div>
+              <h3 className="text-xl font-semibold text-white mb-2">Game Development</h3>
+              <p className="text-gray-400">Roblox Studio, Fortnite Creative, game design</p>
+            </div>
+
+            <div className="text-center">
+              <div className="w-16 h-16 mx-auto mb-4 bg-gradient-to-r from-pink-500 to-green-500 rounded-lg flex items-center justify-center">
+                <svg className="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+                </svg>
+              </div>
+              <h3 className="text-xl font-semibold text-white mb-2">Community Building</h3>
+              <p className="text-gray-400">Discord management, event planning, engagement</p>
             </div>
           </div>
         </div>
       </section>
 
       {/* Contact Section */}
-      <section className="py-20 px-4">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-4xl font-bold mb-16 bg-gradient-to-r from-gray-300 to-white bg-clip-text text-transparent">
-            Let's Connect
+      <section className="py-16 bg-black/50 backdrop-blur-sm">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-4xl font-bold text-white mb-4">
+            Let&apos;s Connect!
           </h2>
+          <p className="text-xl text-gray-300 mb-8">
+            Follow me across all platforms and join the community
+          </p>
           
-          <div className="bg-gradient-to-br from-gray-900/30 to-slate-900/30 rounded-xl p-8 border border-gray-500/30">
-            <p className="text-lg text-gray-300 mb-8">
-              Want to collaborate, have questions, or just want to say hi? 
-              I'd love to hear from you!
+          <div className="mb-8">
+            <SocialLinks variant="default" showLabels={true} />
+          </div>
+
+          <div className="bg-gradient-to-br from-pink-500/10 to-green-500/10 backdrop-blur-sm border border-pink-500/20 rounded-lg p-6">
+            <h3 className="text-xl font-bold text-white mb-3">Get in Touch</h3>
+            <p className="text-gray-300 mb-4">
+              Want to collaborate, have a question, or just want to say hi? 
+              The best way to reach me is through Discord or by joining my community!
             </p>
-            
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a
-                href="#"
-                className="px-8 py-4 bg-gradient-to-r from-purple-600 to-pink-600 rounded-lg font-semibold text-white hover:from-purple-500 hover:to-pink-500 transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-purple-500/25"
-              >
-                📧 Send Email
-              </a>
-              <a
-                href="#"
-                className="px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg font-semibold text-white hover:from-blue-500 hover:to-purple-500 transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-blue-500/25"
-              >
-                💬 Discord Server
-              </a>
-            </div>
-            
-            <div className="mt-8">
-              <SocialLinks />
-            </div>
+            <a
+              href="https://discord.gg/GgPcPgMjTV"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block bg-gradient-to-r from-indigo-500 to-purple-500 hover:from-indigo-600 hover:to-purple-600 text-white font-bold py-3 px-8 rounded-lg transition-all duration-300 transform hover:scale-105"
+            >
+              Join My Discord
+            </a>
           </div>
         </div>
       </section>
-    </Layout>
+    </div>
   );
 }
-

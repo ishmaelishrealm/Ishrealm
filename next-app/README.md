@@ -1,138 +1,36 @@
-# Ishrealm - Next.js Portfolio Website
+This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-Welcome to Ishrealm, the digital realm of Ishmael! This is a modern, anime/gamer-inspired portfolio website built with Next.js, TypeScript, and TailwindCSS.
+## Getting Started
 
-## 🎮 Features
+First, run the development server:
 
-- **Multi-themed Pages**: Each section has its own unique aesthetic
-  - **Home**: Mystic realm vibes with purple/pink gradients
-  - **Streaming**: Frost/ice theme for Mugiwara Frost brand
-  - **Roblox Dev**: Playful blocky aesthetic with orange/red colors
-  - **Fortnite Creative**: Futuristic glitch effects with purple/pink
-  - **About**: Clean professional theme
-
-- **Anime/Gamer Styling**: 
-  - Animated particles and floating elements
-  - Glowing hover effects and transitions
-  - Custom scrollbar with gradient colors
-  - Responsive dropdown navigation
-
-- **Modern Tech Stack**:
-  - Next.js 15 with App Router
-  - TypeScript for type safety
-  - TailwindCSS for styling
-  - Responsive design for all devices
-
-## 🚀 Getting Started
-
-### Prerequisites
-- Node.js 18+ 
-- npm or yarn
-
-### Installation
-
-1. Navigate to the project directory:
-```bash
-cd next-app
-```
-
-2. Install dependencies:
-```bash
-npm install
-```
-
-3. Run the development server:
 ```bash
 npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+# or
+bun dev
 ```
 
-4. Open [http://localhost:3000](http://localhost:3000) in your browser
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-## 📁 Project Structure
+You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-```
-next-app/
-├── src/
-│   ├── app/                    # Next.js App Router pages
-│   │   ├── page.tsx           # Home page
-│   │   ├── streaming/         # Mugiwara Frost streaming page
-│   │   ├── roblox/           # Roblox development showcase
-│   │   ├── fortnite/         # Fortnite Creative projects
-│   │   └── about/            # About Ishmael page
-│   ├── components/           # Reusable React components
-│   │   ├── Layout.tsx        # Main layout wrapper
-│   │   ├── Navbar.tsx        # Navigation with dropdown
-│   │   ├── Footer.tsx        # Site footer
-│   │   └── SocialLinks.tsx   # Social media links
-│   └── themes/               # Page-specific CSS themes
-├── public/                   # Static assets
-│   ├── grabtap-bg.png       # Background images
-│   ├── tiktok.png           # Social platform icons
-│   ├── twitch.png
-│   └── youtube.png
-└── package.json             # Dependencies and scripts
-```
+This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
-## 🎨 Design Philosophy
+## Learn More
 
-Each page follows a unique color scheme and aesthetic:
+To learn more about Next.js, take a look at the following resources:
 
-- **Home (Ishrealm)**: Purple/pink gradients with mystical realm vibes
-- **Streaming (Mugiwara Frost)**: Blue/cyan frost theme with snowflake particles
-- **Roblox Dev**: Orange/red blocky aesthetic with floating cubes
-- **Fortnite Creative**: Purple/pink futuristic theme with glitch effects
-- **About**: Clean gray/white professional theme
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-## 🔧 Customization
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
-### Adding New Pages
-1. Create a new folder in `src/app/`
-2. Add a `page.tsx` file
-3. Update the navigation in `src/components/Navbar.tsx`
+## Deploy on Vercel
 
-### Modifying Themes
-- Update the className in each page's Layout component
-- Modify TailwindCSS classes for different color schemes
-- Add custom animations in `src/app/globals.css`
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-### Social Links
-- Update links in `src/components/SocialLinks.tsx`
-- Add new platforms by extending the socialLinks array
-
-## 🚀 Deployment
-
-This project is configured for Vercel deployment:
-
-1. Push your code to GitHub
-2. Connect your repository to Vercel
-3. Set the root directory to `next-app`
-4. Deploy!
-
-## 📱 Responsive Design
-
-The website is fully responsive and works on:
-- Desktop computers
-- Tablets
-- Mobile phones
-- All modern browsers
-
-## 🎯 Future Enhancements
-
-- [ ] Add Twitch/YouTube live embeds
-- [ ] Implement dark/light theme toggle
-- [ ] Add more interactive animations
-- [ ] Create a blog section
-- [ ] Add contact form functionality
-- [ ] Integrate with external APIs
-
-## 📄 License
-
-This project is created for Ishmael's personal portfolio. All rights reserved.
-
-## 🤝 Contributing
-
-This is a personal portfolio project. If you have suggestions or find bugs, feel free to reach out!
-
----
-
-Built with ❤️ by Ishmael for the Ishrealm community!
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.

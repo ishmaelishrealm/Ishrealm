@@ -1,243 +1,183 @@
-import Layout from '@/components/Layout';
+'use client';
 
-export default function Fortnite() {
+export default function FortnitePage() {
   return (
-    <Layout className="bg-gradient-to-br from-purple-900/20 via-pink-900/10 to-blue-900/20">
+    <div className="min-h-screen bg-gradient-to-br from-purple-900 via-pink-900 to-indigo-900">
+      {/* Fortnite-style Background Effects */}
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_25%_75%,rgba(168,85,247,0.3),transparent_50%)]"></div>
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_75%_25%,rgba(236,72,153,0.2),transparent_50%)]"></div>
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(99,102,241,0.1),transparent_70%)]"></div>
+      
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-        {/* Fortnite Background Effects */}
-        <div className="absolute inset-0 bg-gradient-to-br from-purple-900/40 via-pink-800/20 to-blue-900/30"></div>
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_25%_25%,rgba(147,51,234,0.15),transparent_50%)]"></div>
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_75%_75%,rgba(236,72,153,0.15),transparent_50%)]"></div>
-        
-        {/* Glitch effects */}
-        <div className="absolute inset-0">
-          {[...Array(15)].map((_, i) => (
-            <div
-              key={i}
-              className="absolute bg-gradient-to-r from-purple-400 to-pink-400 opacity-30 animate-pulse"
-              style={{
-                left: `${Math.random() * 100}%`,
-                top: `${Math.random() * 100}%`,
-                width: `${2 + Math.random() * 4}px`,
-                height: `${20 + Math.random() * 40}px`,
-                animationDelay: `${Math.random() * 2}s`,
-                animationDuration: `${1 + Math.random() * 2}s`,
-              }}
-            ></div>
-          ))}
-        </div>
-
-        <div className="relative z-10 text-center max-w-4xl mx-auto px-4">
-          {/* Main Title */}
-          <h1 className="text-6xl md:text-8xl font-bold mb-6">
-            <span className="bg-gradient-to-r from-purple-400 via-pink-400 to-blue-400 bg-clip-text text-transparent animate-pulse">
-              Fortnite Creative
-            </span>
-          </h1>
-          
-          {/* Subtitle */}
-          <div className="text-2xl md:text-3xl text-purple-200 mb-4">
-            ⚡ Building the Future ⚡
-          </div>
-          
-          {/* Description */}
-          <p className="text-lg md:text-xl text-purple-100 mb-8 max-w-2xl mx-auto leading-relaxed">
-            Welcome to my Fortnite Creative universe! I'm crafting immersive maps, 
-            innovative game modes, and epic experiences that push the boundaries of creativity.
-          </p>
-
-          {/* Coming Soon Badge */}
-          <div className="mb-8">
-            <div className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-purple-600 to-pink-600 rounded-lg text-white font-semibold shadow-lg shadow-purple-500/25 border border-purple-400/30">
-              <div className="w-3 h-3 bg-white rounded-full mr-3 animate-pulse"></div>
-              🚧 COMING SOON - Development in Progress! 🚧
+      <section className="relative py-20 pt-36">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          {/* Fortnite Creative Branding */}
+          <div className="mb-12">
+            <div className="w-24 h-24 mx-auto mb-6 bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg flex items-center justify-center shadow-2xl border-4 border-white/20 transform -rotate-12">
+              <span className="text-white font-bold text-2xl">F</span>
+            </div>
+            <h1 className="text-5xl md:text-7xl font-bold mb-4">
+              <span className="bg-gradient-to-r from-purple-400 via-pink-400 to-indigo-400 bg-clip-text text-transparent">
+                Fortnite Creative
+              </span>
+            </h1>
+            <p className="text-xl md:text-2xl text-purple-200 mb-2">
+              Creative Maps & Game Modes
+            </p>
+            <div className="inline-block bg-gradient-to-r from-purple-500/20 to-pink-500/20 backdrop-blur-sm border border-purple-400/30 rounded-lg px-6 py-3">
+              <p className="text-purple-300 font-medium">
+                Building the future of <span className="font-bold text-white">Fortnite Creative</span>
+              </p>
             </div>
           </div>
+        </div>
+      </section>
 
-          {/* Preview Button */}
-          <div className="flex justify-center mb-12">
+      {/* Coming Soon Section */}
+      <section className="py-16 bg-black/30 backdrop-blur-sm">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl font-bold text-white mb-4">
+              Creative Projects
+            </h2>
+            <p className="text-xl text-purple-200">
+              Amazing Fortnite Creative experiences coming soon!
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {/* Map Card 1 */}
+            <div className="group bg-gradient-to-br from-purple-500/20 to-pink-500/20 backdrop-blur-sm border border-purple-400/30 rounded-lg p-8 hover:border-purple-300/50 transition-all duration-300 transform hover:scale-105">
+              <div className="aspect-video bg-gradient-to-br from-purple-600 to-pink-600 rounded-lg mb-6 flex items-center justify-center relative overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent transform -skew-x-12 animate-pulse"></div>
+                <div className="text-center relative z-10">
+                  <div className="w-20 h-20 mx-auto mb-3 bg-white/20 rounded-lg flex items-center justify-center">
+                    <svg className="w-10 h-10 text-white" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                    </svg>
+                  </div>
+                  <p className="text-white font-semibold text-lg">Battle Royale Map</p>
+                </div>
+              </div>
+              <h3 className="text-2xl font-bold text-white mb-3">Epic Battle Arena</h3>
+              <p className="text-purple-300 mb-4">
+                A massive battle royale map with unique locations, hidden secrets, and intense combat zones. Features custom weapons and vehicles!
+              </p>
+              <div className="flex items-center justify-between">
+                <span className="text-purple-400 font-medium">Coming Soon</span>
+                <div className="flex space-x-1">
+                  <div className="w-2 h-2 bg-purple-400 rounded-full animate-pulse"></div>
+                  <div className="w-2 h-2 bg-pink-400 rounded-full animate-pulse" style={{animationDelay: '0.2s'}}></div>
+                  <div className="w-2 h-2 bg-indigo-400 rounded-full animate-pulse" style={{animationDelay: '0.4s'}}></div>
+                </div>
+              </div>
+            </div>
+
+            {/* Map Card 2 */}
+            <div className="group bg-gradient-to-br from-pink-500/20 to-indigo-500/20 backdrop-blur-sm border border-pink-400/30 rounded-lg p-8 hover:border-pink-300/50 transition-all duration-300 transform hover:scale-105">
+              <div className="aspect-video bg-gradient-to-br from-pink-600 to-indigo-600 rounded-lg mb-6 flex items-center justify-center relative overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent transform skew-x-12 animate-pulse"></div>
+                <div className="text-center relative z-10">
+                  <div className="w-20 h-20 mx-auto mb-3 bg-white/20 rounded-lg flex items-center justify-center">
+                    <svg className="w-10 h-10 text-white" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+                    </svg>
+                  </div>
+                  <p className="text-white font-semibold text-lg">Creative Hub</p>
+                </div>
+              </div>
+              <h3 className="text-2xl font-bold text-white mb-3">Adventure Park</h3>
+              <p className="text-pink-300 mb-4">
+                An immersive adventure park with mini-games, obstacle courses, and interactive experiences. Perfect for casual fun with friends!
+              </p>
+              <div className="flex items-center justify-between">
+                <span className="text-pink-400 font-medium">In Development</span>
+                <div className="flex space-x-1">
+                  <div className="w-2 h-2 bg-pink-400 rounded-full animate-pulse"></div>
+                  <div className="w-2 h-2 bg-indigo-400 rounded-full animate-pulse" style={{animationDelay: '0.2s'}}></div>
+                  <div className="w-2 h-2 bg-purple-400 rounded-full animate-pulse" style={{animationDelay: '0.4s'}}></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Features Section */}
+      <section className="py-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl font-bold text-white mb-4">
+              What Makes My Maps Special
+            </h2>
+            <p className="text-xl text-purple-200">
+              Unique features and innovative gameplay mechanics
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="text-center">
+              <div className="w-16 h-16 mx-auto mb-4 bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg flex items-center justify-center">
+                <svg className="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                </svg>
+              </div>
+              <h3 className="text-xl font-semibold text-white mb-2">Innovative Design</h3>
+              <p className="text-purple-300">Unique layouts and creative use of Fortnite Creative tools</p>
+            </div>
+
+            <div className="text-center">
+              <div className="w-16 h-16 mx-auto mb-4 bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg flex items-center justify-center">
+                <svg className="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                </svg>
+              </div>
+              <h3 className="text-xl font-semibold text-white mb-2">Balanced Gameplay</h3>
+              <p className="text-purple-300">Carefully crafted mechanics for fair and fun gameplay</p>
+            </div>
+
+            <div className="text-center">
+              <div className="w-16 h-16 mx-auto mb-4 bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg flex items-center justify-center">
+                <svg className="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                </svg>
+              </div>
+              <h3 className="text-xl font-semibold text-white mb-2">Community Focus</h3>
+              <p className="text-purple-300">Maps designed with the community in mind for maximum enjoyment</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Call to Action */}
+      <section className="py-16 bg-black/30 backdrop-blur-sm">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-3xl font-bold text-white mb-4">
+            Ready to Play My Maps?
+          </h2>
+          <p className="text-xl text-purple-200 mb-8">
+            Follow me on Epic Games to get notified when my Creative maps are published!
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
-              href="#"
-              className="px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg font-semibold text-white hover:from-blue-500 hover:to-purple-500 transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-blue-500/25"
+              href="https://www.epicgames.com/fortnite/creative"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white font-bold py-3 px-8 rounded-lg transition-all duration-300 transform hover:scale-105"
             >
-              🔮 Preview Concepts
+              Explore Fortnite Creative
+            </a>
+            <a
+              href="https://discord.gg/GgPcPgMjTV"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block bg-gradient-to-r from-indigo-500 to-purple-500 hover:from-indigo-600 hover:to-purple-600 text-white font-bold py-3 px-8 rounded-lg transition-all duration-300 transform hover:scale-105"
+            >
+              Join Discord for Updates
             </a>
           </div>
         </div>
       </section>
-
-      {/* Planned Projects Section */}
-      <section className="py-20 px-4">
-        <div className="max-w-6xl mx-auto">
-          <h2 className="text-4xl font-bold text-center mb-16 bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
-            Planned Projects
-          </h2>
-          
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {/* Project 1 */}
-            <div className="bg-gradient-to-br from-purple-900/30 to-pink-900/30 rounded-xl p-6 border border-purple-500/30 hover:border-purple-400/50 transition-all duration-300 group">
-              <div className="aspect-video bg-gradient-to-br from-purple-800 to-pink-700 rounded-lg mb-4 flex items-center justify-center">
-                <div className="text-6xl">🏰</div>
-              </div>
-              <h3 className="text-xl font-bold text-purple-200 mb-2">Medieval Battle Royale</h3>
-              <p className="text-purple-100 mb-4">Epic castle battles with swords, shields, and siege weapons!</p>
-              <div className="flex items-center justify-between">
-                <span className="text-purple-300 text-sm">🚧 In Development</span>
-                <span className="text-purple-400 text-sm">Q2 2024</span>
-              </div>
-            </div>
-
-            {/* Project 2 */}
-            <div className="bg-gradient-to-br from-purple-900/30 to-pink-900/30 rounded-xl p-6 border border-purple-500/30 hover:border-purple-400/50 transition-all duration-300 group">
-              <div className="aspect-video bg-gradient-to-br from-purple-800 to-pink-700 rounded-lg mb-4 flex items-center justify-center">
-                <div className="text-6xl">🚀</div>
-              </div>
-              <h3 className="text-xl font-bold text-purple-200 mb-2">Space Station Escape</h3>
-              <p className="text-purple-100 mb-4">Navigate through a futuristic space station filled with puzzles!</p>
-              <div className="flex items-center justify-between">
-                <span className="text-purple-300 text-sm">🚧 In Development</span>
-                <span className="text-purple-400 text-sm">Q3 2024</span>
-              </div>
-            </div>
-
-            {/* Project 3 */}
-            <div className="bg-gradient-to-br from-purple-900/30 to-pink-900/30 rounded-xl p-6 border border-purple-500/30 hover:border-purple-400/50 transition-all duration-300 group">
-              <div className="aspect-video bg-gradient-to-br from-purple-800 to-pink-700 rounded-lg mb-4 flex items-center justify-center">
-                <div className="text-6xl">🎭</div>
-              </div>
-              <h3 className="text-xl font-bold text-purple-200 mb-2">Mystery Mansion</h3>
-              <p className="text-purple-100 mb-4">Solve puzzles and uncover secrets in a haunted mansion!</p>
-              <div className="flex items-center justify-between">
-                <span className="text-purple-300 text-sm">🚧 In Development</span>
-                <span className="text-purple-400 text-sm">Q4 2024</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Development Timeline */}
-      <section className="py-20 px-4 bg-gradient-to-r from-purple-900/10 to-pink-900/10">
-        <div className="max-w-6xl mx-auto">
-          <h2 className="text-4xl font-bold text-center mb-16 bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
-            Development Timeline
-          </h2>
-          
-          <div className="space-y-8">
-            {/* Phase 1 */}
-            <div className="flex items-center space-x-6">
-              <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-500 rounded-full flex items-center justify-center text-white font-bold">
-                1
-              </div>
-              <div className="flex-1">
-                <h3 className="text-xl font-bold text-purple-200 mb-2">Learning & Planning</h3>
-                <p className="text-purple-100">Mastering Fortnite Creative tools and planning epic projects</p>
-                <div className="mt-2">
-                  <div className="w-full bg-purple-900/30 rounded-full h-2">
-                    <div className="bg-gradient-to-r from-purple-500 to-pink-500 h-2 rounded-full w-3/4"></div>
-                  </div>
-                  <span className="text-purple-300 text-sm">75% Complete</span>
-                </div>
-              </div>
-            </div>
-
-            {/* Phase 2 */}
-            <div className="flex items-center space-x-6">
-              <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-500 rounded-full flex items-center justify-center text-white font-bold">
-                2
-              </div>
-              <div className="flex-1">
-                <h3 className="text-xl font-bold text-purple-200 mb-2">First Map Creation</h3>
-                <p className="text-purple-100">Building the Medieval Battle Royale map with custom mechanics</p>
-                <div className="mt-2">
-                  <div className="w-full bg-purple-900/30 rounded-full h-2">
-                    <div className="bg-gradient-to-r from-purple-500 to-pink-500 h-2 rounded-full w-1/4"></div>
-                  </div>
-                  <span className="text-purple-300 text-sm">25% Complete</span>
-                </div>
-              </div>
-            </div>
-
-            {/* Phase 3 */}
-            <div className="flex items-center space-x-6">
-              <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-500 rounded-full flex items-center justify-center text-white font-bold">
-                3
-              </div>
-              <div className="flex-1">
-                <h3 className="text-xl font-bold text-purple-200 mb-2">Advanced Features</h3>
-                <p className="text-purple-100">Adding complex scripting, custom weapons, and unique game modes</p>
-                <div className="mt-2">
-                  <div className="w-full bg-purple-900/30 rounded-full h-2">
-                    <div className="bg-gradient-to-r from-purple-500 to-pink-500 h-2 rounded-full w-0"></div>
-                  </div>
-                  <span className="text-purple-300 text-sm">0% Complete</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Features Preview */}
-      <section className="py-20 px-4">
-        <div className="max-w-6xl mx-auto">
-          <h2 className="text-4xl font-bold text-center mb-16 bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
-            Planned Features
-          </h2>
-          
-          <div className="grid md:grid-cols-2 gap-8">
-            {/* Custom Weapons */}
-            <div className="bg-gradient-to-br from-purple-900/30 to-pink-900/30 rounded-xl p-8 border border-purple-500/30">
-              <div className="text-4xl mb-4">⚔️</div>
-              <h3 className="text-2xl font-bold text-purple-200 mb-4">Custom Weapons</h3>
-              <ul className="space-y-2 text-purple-100">
-                <li>• Medieval swords with unique abilities</li>
-                <li>• Magical staffs with elemental powers</li>
-                <li>• Siege weapons for castle battles</li>
-                <li>• Custom projectiles and effects</li>
-              </ul>
-            </div>
-
-            {/* Interactive Environments */}
-            <div className="bg-gradient-to-br from-purple-900/30 to-pink-900/30 rounded-xl p-8 border border-purple-500/30">
-              <div className="text-4xl mb-4">🏗️</div>
-              <h3 className="text-2xl font-bold text-purple-200 mb-4">Interactive Environments</h3>
-              <ul className="space-y-2 text-purple-100">
-                <li>• Destructible castle walls</li>
-                <li>• Moving platforms and traps</li>
-                <li>• Dynamic weather systems</li>
-                <li>• Hidden passages and secrets</li>
-              </ul>
-            </div>
-
-            {/* Game Modes */}
-            <div className="bg-gradient-to-br from-purple-900/30 to-pink-900/30 rounded-xl p-8 border border-purple-500/30">
-              <div className="text-4xl mb-4">🎮</div>
-              <h3 className="text-2xl font-bold text-purple-200 mb-4">Unique Game Modes</h3>
-              <ul className="space-y-2 text-purple-100">
-                <li>• Castle Siege Battle Royale</li>
-                <li>• Team-based capture the flag</li>
-                <li>• Survival mode with waves</li>
-                <li>• Puzzle-solving adventures</li>
-              </ul>
-            </div>
-
-            {/* Community Features */}
-            <div className="bg-gradient-to-br from-purple-900/30 to-pink-900/30 rounded-xl p-8 border border-purple-500/30">
-              <div className="text-4xl mb-4">👥</div>
-              <h3 className="text-2xl font-bold text-purple-200 mb-4">Community Features</h3>
-              <ul className="space-y-2 text-purple-100">
-                <li>• Leaderboards and rankings</li>
-                <li>• Custom tournaments</li>
-                <li>• Player feedback system</li>
-                <li>• Regular updates and events</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </section>
-    </Layout>
+    </div>
   );
 }
-

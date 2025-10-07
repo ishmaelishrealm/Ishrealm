@@ -1,155 +1,154 @@
-import Layout from '@/components/Layout';
-import SocialLinks from '@/components/SocialLinks';
+'use client';
+
 import Image from 'next/image';
+import Link from 'next/link';
+import SocialLinks from '@/components/SocialLinks';
 
-export default function Home() {
+export default function HomePage() {
   return (
-    <Layout className="bg-gradient-to-br from-slate-900/30 via-black to-gray-900/20">
+    <div className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-black">
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-        {/* Sophisticated Background */}
-        <div className="absolute inset-0 bg-gradient-to-br from-slate-900/40 via-black to-gray-900/30"></div>
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(100,100,100,0.05),transparent_70%)]"></div>
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16">
+        {/* Background Effects */}
+        <div className="absolute inset-0 bg-gradient-to-r from-pink-500/10 via-transparent to-green-500/10 animate-pulse"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(255,105,180,0.1),transparent_50%)]"></div>
         
-        {/* Subtle particles */}
-        <div className="absolute inset-0">
-          {[...Array(15)].map((_, i) => (
-            <div
-              key={i}
-              className="absolute w-1 h-1 bg-gray-400/40 rounded-full animate-pulse"
-              style={{
-                left: `${Math.random() * 100}%`,
-                top: `${Math.random() * 100}%`,
-                animationDelay: `${Math.random() * 3}s`,
-                animationDuration: `${3 + Math.random() * 2}s`,
-              }}
-            ></div>
-          ))}
-        </div>
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          {/* Main Logo/Title */}
+          <div className="mb-8">
+            <div className="w-32 h-32 mx-auto mb-6 bg-gradient-to-r from-pink-500 to-green-500 rounded-full flex items-center justify-center shadow-2xl">
+              <span className="text-white font-bold text-2xl italic" style={{fontFamily: 'cursive'}}>sonoaac</span>
+            </div>
+            <h1 className="text-6xl md:text-8xl font-bold mb-4">
+              <span className="bg-gradient-to-r from-pink-500 to-green-500 bg-clip-text text-transparent">
+                Ishrealm
+              </span>
+            </h1>
+            <p className="text-xl md:text-2xl text-gray-300 mb-2">
+              Welcome to the realm of
+            </p>
+            <p className="text-2xl md:text-3xl font-semibold text-white">
+              Ishmael
+            </p>
+          </div>
 
-        <div className="relative z-10 text-center max-w-5xl mx-auto px-4">
-          {/* Hero Image */}
-          <div className="mb-8 flex justify-center">
-            <div className="relative">
-              <Image
-                src="/Intropage.png"
-                alt="Ishrealm Introduction"
-                width={400}
-                height={300}
-                className="rounded-xl shadow-2xl border border-gray-700/50"
-                priority
-              />
-              <div className="absolute inset-0 rounded-xl bg-gradient-to-t from-black/20 to-transparent"></div>
+          {/* Streaming Alias */}
+          <div className="mb-12">
+            <div className="inline-block bg-gradient-to-r from-blue-400/20 to-cyan-400/20 backdrop-blur-sm border border-cyan-400/30 rounded-lg px-6 py-3">
+              <p className="text-cyan-400 font-medium">
+                Also known as <span className="font-bold text-white">Mugiwara Frost</span>
+              </p>
             </div>
           </div>
 
-          {/* Main Title */}
-          <h1 className="text-5xl md:text-7xl font-bold mb-6">
-            <span className="bg-gradient-to-r from-gray-200 via-white to-gray-200 bg-clip-text text-transparent">
-              Ishrealm
-            </span>
-          </h1>
-          
-          {/* Subtitle */}
-          <div className="text-xl md:text-2xl text-gray-300 mb-4">
-            <span className="text-blue-300">Mugiwara Frost</span>
-            <span className="mx-4 text-gray-500">/</span>
-            <span className="text-gray-200">Content Creator</span>
-          </div>
-          
-          {/* Description */}
-          <p className="text-lg md:text-xl text-gray-400 mb-8 max-w-2xl mx-auto leading-relaxed">
-            Welcome to my digital realm! I create content across multiple platforms, 
-            develop games on Roblox, and stream as Mugiwara Frost. Join me on this journey!
-          </p>
-
-          {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-            <a
-              href="/streaming"
-              className="px-8 py-4 bg-gradient-to-r from-blue-600/80 to-purple-600/80 backdrop-blur-sm rounded-lg font-semibold text-white hover:from-blue-500/90 hover:to-purple-500/90 transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-blue-500/20 border border-blue-500/30"
-            >
-              🎮 Watch My Streams
-            </a>
-            <a
-              href="/roblox"
-              className="px-8 py-4 bg-gradient-to-r from-orange-600/80 to-red-600/80 backdrop-blur-sm rounded-lg font-semibold text-white hover:from-orange-500/90 hover:to-red-500/90 transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-orange-500/20 border border-orange-500/30"
-            >
-              🎯 Play My Games
-            </a>
-          </div>
-
           {/* Social Links */}
-          <div className="flex justify-center">
-            <SocialLinks />
+          <div className="mb-12">
+            <h2 className="text-lg text-gray-400 mb-6">Follow me across all platforms</h2>
+            <SocialLinks variant="default" showLabels={true} />
+          </div>
+
+          {/* Quick Navigation */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-4xl mx-auto">
+            <Link 
+              href="/streaming" 
+              className="group bg-gradient-to-br from-purple-500/20 to-pink-500/20 backdrop-blur-sm border border-purple-500/30 rounded-lg p-6 hover:border-purple-400/50 transition-all duration-300 transform hover:scale-105"
+            >
+              <div className="text-purple-400 mb-3">
+                <svg className="w-8 h-8 mx-auto" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M11.571 4.714h1.715v5.143H11.57zm4.715 0H18v5.143h-1.714zM6 0L1.714 4.286v15.428h5.143V24l4.286-4.286h3.428L22.286 12V0zm14.571 11.143l-3.428 3.428h-3.429l-3 3v-3H6.857V1.714h13.714Z"/>
+                </svg>
+              </div>
+              <h3 className="text-white font-semibold mb-2">Streaming</h3>
+              <p className="text-gray-400 text-sm">Live gaming streams & content</p>
+            </Link>
+
+            <Link 
+              href="/roblox" 
+              className="group bg-gradient-to-br from-green-500/20 to-blue-500/20 backdrop-blur-sm border border-green-500/30 rounded-lg p-6 hover:border-green-400/50 transition-all duration-300 transform hover:scale-105"
+            >
+              <div className="text-green-400 mb-3">
+                <svg className="w-8 h-8 mx-auto" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+                </svg>
+              </div>
+              <h3 className="text-white font-semibold mb-2">Roblox Dev</h3>
+              <p className="text-gray-400 text-sm">Mini-games & experiences</p>
+            </Link>
+
+            <Link 
+              href="/fortnite" 
+              className="group bg-gradient-to-br from-purple-500/20 to-pink-500/20 backdrop-blur-sm border border-purple-500/30 rounded-lg p-6 hover:border-purple-400/50 transition-all duration-300 transform hover:scale-105"
+            >
+              <div className="text-purple-400 mb-3">
+                <svg className="w-8 h-8 mx-auto" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                </svg>
+              </div>
+              <h3 className="text-white font-semibold mb-2">Fortnite</h3>
+              <p className="text-gray-400 text-sm">Creative maps & modes</p>
+            </Link>
+
+            <Link 
+              href="/about" 
+              className="group bg-gradient-to-br from-pink-500/20 to-green-500/20 backdrop-blur-sm border border-pink-500/30 rounded-lg p-6 hover:border-pink-400/50 transition-all duration-300 transform hover:scale-105"
+            >
+              <div className="text-pink-400 mb-3">
+                <svg className="w-8 h-8 mx-auto" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+                </svg>
+              </div>
+              <h3 className="text-white font-semibold mb-2">About Me</h3>
+              <p className="text-gray-400 text-sm">Learn more about Ishmael</p>
+            </Link>
           </div>
         </div>
       </section>
 
       {/* Features Section */}
-      <section className="py-20 px-4">
-        <div className="max-w-6xl mx-auto">
-          <h2 className="text-4xl font-bold text-center mb-16 bg-gradient-to-r from-gray-200 to-white bg-clip-text text-transparent">
-            What I Do
-          </h2>
-          
-          <div className="grid md:grid-cols-3 gap-8">
-            {/* Streaming Card */}
-            <div className="bg-gradient-to-br from-slate-800/40 to-gray-800/40 backdrop-blur-sm rounded-xl p-8 border border-gray-600/30 hover:border-blue-500/50 transition-all duration-300 group">
-              <div className="text-4xl mb-4">❄️</div>
-              <h3 className="text-2xl font-bold mb-4 text-blue-300">Streaming</h3>
-              <p className="text-gray-300 mb-6">
-                Join me as Mugiwara Frost for gaming streams, challenges, and community fun!
-              </p>
-              <a
-                href="/streaming"
-                className="inline-flex items-center text-blue-400 hover:text-blue-300 transition-colors group-hover:translate-x-1 transform duration-300"
-              >
-                Explore Streams
-                <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+      <section className="py-20 bg-black/50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-white mb-4">
+              What I Do
+            </h2>
+            <p className="text-xl text-gray-400">
+              Gaming, streaming, and creating amazing experiences
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="text-center">
+              <div className="w-16 h-16 mx-auto mb-4 bg-gradient-to-r from-pink-500 to-green-500 rounded-full flex items-center justify-center">
+                <svg className="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
                 </svg>
-              </a>
+              </div>
+              <h3 className="text-xl font-semibold text-white mb-2">Content Creation</h3>
+              <p className="text-gray-400">Creating engaging gaming content across multiple platforms</p>
             </div>
 
-            {/* Roblox Dev Card */}
-            <div className="bg-gradient-to-br from-slate-800/40 to-gray-800/40 backdrop-blur-sm rounded-xl p-8 border border-gray-600/30 hover:border-orange-500/50 transition-all duration-300 group">
-              <div className="text-4xl mb-4">🎮</div>
-              <h3 className="text-2xl font-bold mb-4 text-orange-300">Roblox Development</h3>
-              <p className="text-gray-300 mb-6">
-                Creating immersive mini-games and experiences for the Roblox community.
-              </p>
-              <a
-                href="/roblox"
-                className="inline-flex items-center text-orange-400 hover:text-orange-300 transition-colors group-hover:translate-x-1 transform duration-300"
-              >
-                View Games
-                <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+            <div className="text-center">
+              <div className="w-16 h-16 mx-auto mb-4 bg-gradient-to-r from-pink-500 to-green-500 rounded-full flex items-center justify-center">
+                <svg className="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
                 </svg>
-              </a>
+              </div>
+              <h3 className="text-xl font-semibold text-white mb-2">Game Development</h3>
+              <p className="text-gray-400">Building mini-games and experiences in Roblox</p>
             </div>
 
-            {/* Fortnite Creative Card */}
-            <div className="bg-gradient-to-br from-slate-800/40 to-gray-800/40 backdrop-blur-sm rounded-xl p-8 border border-gray-600/30 hover:border-purple-500/50 transition-all duration-300 group">
-              <div className="text-4xl mb-4">⚡</div>
-              <h3 className="text-2xl font-bold mb-4 text-purple-300">Fortnite Creative</h3>
-              <p className="text-gray-300 mb-6">
-                Building creative maps and game modes in Fortnite's Creative mode.
-              </p>
-              <a
-                href="/fortnite"
-                className="inline-flex items-center text-purple-400 hover:text-purple-300 transition-colors group-hover:translate-x-1 transform duration-300"
-              >
-                Coming Soon
-                <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+            <div className="text-center">
+              <div className="w-16 h-16 mx-auto mb-4 bg-gradient-to-r from-pink-500 to-green-500 rounded-full flex items-center justify-center">
+                <svg className="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
                 </svg>
-              </a>
+              </div>
+              <h3 className="text-xl font-semibold text-white mb-2">Community Building</h3>
+              <p className="text-gray-400">Growing an amazing community of gamers and creators</p>
             </div>
           </div>
         </div>
       </section>
-    </Layout>
+    </div>
   );
 }
